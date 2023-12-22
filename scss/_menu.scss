@@ -1,0 +1,41 @@
+// Menu buttons
+.menu-btn{
+position: absolute;
+z-index: 3;
+right: 35px;
+top: 35px;
+cursor: pointer;
+@include easeOut;
+
+.btn-line{
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0; /* top | right | bottom | left */
+    background: white;
+    @include easeOut;
+}
+
+// Rotating menu Lines to X. When it is clicked
+&.close{
+transform:rotate(180deg);
+.btn-line{
+    //using pseudo classes to seleect elements
+    //Line 1 - Rotate
+    &:nth-child(1){
+        transform: rotate(45deg) translate(5px);
+        background-color: red;
+    }
+    //Line 2 - Hide
+    &:nth-child(2){
+        opacity: 0;
+    }
+    &:nth-child(3){
+        transform: rotate(-45deg) translate(11px, -6px);
+        background-color: red;
+    }
+
+    //Line 3 - Rotate
+}
+}
+
+}
