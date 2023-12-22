@@ -123,15 +123,39 @@
         &.show {
             transform: translate3d(0, 0, 0);
         }
+
+        //  makes the first link element (Home) yellow
+        &.current>a {
+            color: $secondary-color;
+        }
     }
+
+
+
+    .nav-link {
+        display: inline-block;
+        position: relative;
+        font-size: 30px;
+        text-transform: capitalize;
+        padding: 1rem 0;
+        font-weight: 300;
+        color: white;
+        text-decoration: none;
+        @include easeOut;
+
+        //yellow when mouse on it
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+
 }
 
 /* Delay for each nav item slide by 0.1s.
 We will use Sass for loop. 
 Through 4 because we have 4 nav-item
 it is similar to for(let x=0:i<4;i++)
-
-#{$x}): # makes it a number
+# makes variable a number
 */
 
 @for $x from 1 through 4 {

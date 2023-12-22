@@ -56,3 +56,33 @@ $backround-oppacity: 0.7;
     }
   }
 }
+
+//Media Query Mixins. Adjusting size depending on the device,  later we created a _mobile.scss
+
+//any css put inside pharantesis  should be for devices screen 500px or less.
+@mixin mediaSm {
+  @media screen and (max-width:500px) {
+    @content;
+
+  }
+}
+
+@mixin mediaMd {
+  @media screen and (max-width:768px) {
+    @content;
+
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (max-width:768px) and (max-width:1170px) {
+    @content;
+
+  }
+}
+
+@mixin mediaXl {
+  @media screen and (min-width:1170px) {
+    @content;
+  }
+}

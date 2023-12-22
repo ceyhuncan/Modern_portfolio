@@ -70,6 +70,72 @@ when you put your variables and functions iin a different files.
     transition: all 0.5s ease-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
+    .menu .nav-item.current > a {
+      color: #eece1a; }
+  .menu .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: capitalize;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s ease-out; }
+    .menu .nav-link:hover {
+      color: #eece1a; }
+
+/* Delay for each nav item slide by 0.1s.
+We will use Sass for loop. 
+Through 4 because we have 4 nav-item
+it is similar to for(let x=0:i<4;i++)
+# makes variable a number
+*/
+.nav-item:nth-child(1) {
+  transition-delay: 0.1s; }
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.2s; }
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.3s; }
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.4s; }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; } }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+    ul.menu-nav .menu-nav,
+    div.menu-branding .menu-nav {
+      height: 75vh;
+      transform: translate3d(-100%, 0, 0); }
+    ul.menu-nav .menu-branding,
+    div.menu-branding .menu-branding {
+      height: 25vh;
+      transform: translate3d(100%, 0, 0); }
+      ul.menu-nav .menu-branding .portrait,
+      div.menu-branding .menu-branding .portrait {
+        background: url("./img/portrait_small1.jpg");
+        background-size: cover;
+        width: 150px;
+        height: 150px; } }
 
 * {
   box-sizing: border-box; }
