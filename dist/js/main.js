@@ -14,7 +14,7 @@ let showMenu= false;
 //Event listener for the menu button. If button click execute toggleMenu function
 menuBtn.addEventListener('click', toggleMenu);
 
-//Check if the menu is open:
+//Check if the menu is open and add show or close classes:
 function toggleMenu(){
     if(!showMenu){
         menuBtn.classList.add('close');
