@@ -1,6 +1,6 @@
 @import "config"; //We didint use underscore when importing
 @import "menu";
-@import "mobile";
+
 
 
 * {
@@ -10,7 +10,7 @@
 body {
 
     @include background();
-    background: $primary-color;
+    background: set-text-color($primary-color); // Now depending on the primary color backround color will be changeg
     color: white;
     height: 100%;
     margin: 0;
@@ -55,7 +55,8 @@ header {
 
 main {
     padding: 4rem;
-    height: 100%;
+    // height: 100%; we commented because we want a sticky footer
+    min-height: calc(100vh-60px); //and added this calc function for sticky footer
 
     .icons {
         margin-top: 1rem;
@@ -83,3 +84,147 @@ main {
 
     }
 }
+
+//Delete about-body after solvint set-backround-color function problem
+.about-body {
+    background: #444;
+}
+
+/* ABOUT */
+.about-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+        'bioimage bio bio'
+        'job1 job2 job3';
+    grid-template-columns: repeat(3, 1fr); //or 1fr 1fr 1fr;
+
+    .bio-image {
+        grid-area: bioimage;
+        margin: auto;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        border: $secondary-color 3px solid;
+    }
+
+    .bio {
+        grid-area: bio;
+    }
+
+    .job1 {
+        grid-area: job1;
+    }
+
+    .job2 {
+        grid-area: job2;
+    }
+
+    .job3 {
+        grid-area: job3;
+    }
+
+    .job {
+        background: lighten($color: $primary-color, $amount: 4);
+        padding: 0.5rem;
+        border-bottom: $secondary-color 5px solid;
+    }
+
+}
+
+/* PROJECTS PAGE */
+// We will use again display grid for css
+.projects {
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(3, 1fr);
+
+
+    img {
+        width: 225px;
+        height: 175px;
+        width: 100%;
+        border: 3px #fff solid;
+
+        &:hover {
+            opacity: 0.7;
+            border-color: $secondary-color;
+        }
+    }
+
+    //Buttons Styling for.We will create a basic style for both button and extends it to both classes. A different approach (Sass feature)
+    /* My Work Buttons*/
+
+    .btn {
+        display: block;
+        padding: 0.5rem 0.5rem;
+        border: 0;
+        margin-bottom: 0.3rem;
+
+        &:hover {
+            background: $secondary-color;
+            color: set-text-color($secondary-color);
+        }
+    }
+
+    .btn-dark {
+        @extend .btn;
+        background: darken($primary-color, 50);
+        color: #fff;
+
+    }
+
+    .btn-light {
+        @extend .btn;
+        background: lighten($primary-color, 50);
+        color: #000;
+    }
+
+}
+
+
+/* CONTACT PAGE*/
+//We wil use flex-container. You can still use grid as well
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+
+    div {
+        border: 3px solid #fff;
+        font-size: 2rem;
+        padding: 1.5rem 2.5rem;
+        margin-bottom: 3rem;
+        @include easeOut;
+
+        &:hover {
+            padding: 0.5rem 1.5rem;
+            background: $secondary-color;
+            color: set-text-color($secondary-color);
+
+            span {
+                color: set-text-color($secondary-color);
+            }
+
+            ;
+
+        }
+
+    }
+}
+
+
+
+/* FOOTER */
+//We want to make a sticky footer. The position indipendent from previous content
+#main-footer {
+    text-align: center;
+    padding: 1rem;
+    background: darken($color: $primary-color, $amount: 10);
+    color: set-text-color($primary-color);
+    height: 60px;
+}
+
+@import "mobile"; // we moved this on bottom because we want first compile config and menu.

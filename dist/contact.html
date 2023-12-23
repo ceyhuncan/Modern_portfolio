@@ -1,3 +1,5 @@
+<!-- We will use flex box -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,9 +10,9 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="css/main.css" />
-    <title>Welcome to J's Portfolio</title>
+    <title>Contact Me</title>
   </head>
-  <body id="bg-img">
+  <body class="about-body">
     <!-- <div class="overlay"></div> -->
     <header>
       <div class="menu-btn">
@@ -25,7 +27,7 @@
         </div>
         <!-- Right side menu section -->
         <ul class="menu-nav">
-          <li class="nav-item current">
+          <li class="nav-item">
             <a href="index.html" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
@@ -34,32 +36,36 @@
           <li class="nav-item">
             <a href="work.html" class="nav-link">My Work</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item current">
             <a href="contact.html" class="nav-link">How To Reach Me</a>
           </li>
         </ul>
       </nav>
     </header>
-    <main id="home">
-      <h1 class="lg-heading">
-        JayCe <span class="text-secondary">Cagliyan</span>
-      </h1>
-      <h2 class="sm-heading">Web & App Developper | Engineer | Contributor</h2>
-      <div class="icons">
-        <a href="#!">
-          <i class="fab fa-x-twitter fa-2x"></i>
-        </a>
-        <a href="#!">
-          <i class="fab fa-facebook fa-2x"></i>
-        </a>
-        <a href="#!">
-          <i class="fab fa-linkedin fa-2x"></i>
-        </a>
-        <a href="#!">
-          <i class="fab fa-github fa-2x"></i>
-        </a>
+    <main id="contact">
+      <h1 class="lg-heading">Contact <span class="text-secondary">Me</span></h1>
+      <h2 class="sm-heading">
+        Please reach me to turn your ideas into digital environment
+      </h2>
+      <div class="boxes">
+        <div>
+          <span class="text-secondary">Email:</span>
+          jaycagliyan@gmail.com
+        </div>
+        <div>
+          <span class="text-secondary">Phone:</span>
+          (647) 777-7777
+        </div>
+        <div>
+          <span class="text-secondary">Adress:</span>
+          jaycagliyan@gmail.com
+        </div>
       </div>
     </main>
+    <!-- MAKING STICKY FOOTER -->
+    <!-- On the element before the footer,  
+      calculate min-high using (the viewport high - high of the footer)-->
+    <footer id="main-footer">Copyring &copy;2024</footer>
     <script src="js/main.js"></script>
   </body>
 </html>
